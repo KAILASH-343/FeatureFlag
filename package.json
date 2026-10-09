@@ -1,0 +1,28 @@
+{
+  "name": "feature-flag-lifecycle-system",
+  "version": "1.0.0",
+  "description": "Feature Flag Lifecycle Management with Automated Stale Flag Detection",
+  "scripts": {
+    "test": "cd backend && npm test",
+    "build": "cd frontend && npm run build",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently -n \"backend,frontend\" -c \"blue,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "db:start": "docker compose up -d mysql",
+    "db:stop": "docker compose stop mysql",
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f"
+  },
+  "keywords": [
+    "feature-flags",
+    "stale-flag-detection",
+    "governance",
+    "3-tier-architecture"
+  ],
+  "author": "College Project MVP",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
